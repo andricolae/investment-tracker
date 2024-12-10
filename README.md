@@ -1,4 +1,4 @@
-# EssentialsPractice
+Deployed on VERCEL: https://investment-tracker-andrei.vercel.app/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0-next.2.
 
