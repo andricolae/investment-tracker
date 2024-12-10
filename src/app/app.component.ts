@@ -9,25 +9,25 @@ import { UserInputComponent } from './user-input/user-input.component';
   imports: [HeaderComponent, UserInputComponent]
 })
 export class AppComponent {
-  calculateInvestmentResults(data: { initialInvestment: number, duration: number, expectedReturn: number, annualInvestment: number }) {
+  onCalculateInvestmentResults(data: { initialInvestment: number, duration: number, expectedReturn: number, annualInvestment: number }) {
     const {initialInvestment, annualInvestment, expectedReturn, duration} = data;
     const annualData= [];
     let investmentValue = initialInvestment;
 
     for (let i = 0; i < duration; i++) {
       const year = i + 1;
-      const interestEarnedInYear = investmentValue (expectedReturn) * / 100);
-      investmentVa1ue += interestEarnedInYear + annuallnvestment;
-      const totallnterest = investmentValue — annuallnvestment * year — initialInvestment;
+      const interestEarnedInYear = investmentValue * (expectedReturn / 100);
+      investmentValue += interestEarnedInYear + annualInvestment;
+      const totallnterest = investmentValue - annualInvestment * year - initialInvestment;
       annualData.push({
         year: year,
         interest: interestEarnedInYear,
         valueEndOfYear: investmentValue,
-        annuallnvestment: annuallnvestment,
-          totallnterest: totallnterest,
-          totalAmountInvested: initiallnvestment + annuallnvestment * year,
+        annuallnvestment: annualInvestment,
+        totallnterest: totallnterest,
+        totalAmountInvested: initialInvestment + annualInvestment * year,
       });
     }
-    return annualData;
+    console.log(annualData);
   }
 }
